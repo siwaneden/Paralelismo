@@ -95,3 +95,4 @@ print(f"Duração (modo concorrente): {fim_paralelo - inicio_paralelo:.20f} segu
 print("\n=== DESEMPENHO COMPARADO ===")
 print(f"Modo direto:     {fim_seq - inicio_seq:.20f} s")
 print(f"Modo paralelo:   {fim_paralelo - inicio_paralelo:.20f} s")
+

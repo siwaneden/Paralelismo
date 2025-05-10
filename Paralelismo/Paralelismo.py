@@ -48,6 +48,7 @@ def explorar_com_paralelismo(lista_nos, ponto_inicial, ponto_final, grafo, carga
 # TESTE EXTRA – Geração automática de grafo grande e mais denso para simulação
 # ================================================================================
 # Esse grafo tem 100 nós, conectados linearmente e com conexões adicionais a cada 10 nós.
+
 def gerar_grafo_grande(n=100):
     grafo = {}
     for i in range(n):
@@ -83,7 +84,7 @@ inicio_seq = time.time()
 rotas_seq = percorrer_largura(grafo_grande, origem_grande, destino_grande, carga_simulada=True)
 fim_seq = time.time()
 print(f"Rotas encontradas: {len(rotas_seq)}")
-print(f"Duração (sequencial): {fim_seq - inicio_seq:.6f} segundos")
+print(f"Duracao (sequencial): {fim_seq - inicio_seq:.6f} segundos")
 
 # ===========================================================
 # Execução paralela da busca com threads e fragmentação
@@ -110,12 +111,13 @@ for rota in respostas:
 
 fim_paralelo = time.time()
 print(f"Rotas encontradas: {len(rotas_unicas)}")
-print(f"Duração (paralelo): {fim_paralelo - inicio_paralelo:.6f} segundos")
+print(f"Duracao (paralelo): {fim_paralelo - inicio_paralelo:.6f} segundos")
 
 # ====================================================
 # Comparativo final de desempenho entre os dois modos
 # ====================================================
-print("\n=== COMPARAÇÃO FINAL ===")
+
+print("\n=== COMPARACAO FINAL PARALELISMO ===")
 print(f"Sequencial: {fim_seq - inicio_seq:.6f} segundos")
 print(f"Paralelo:   {fim_paralelo - inicio_paralelo:.6f} segundos")
 print(f"Diferenca em segundos:    {((fim_seq - inicio_seq) - (fim_paralelo - inicio_paralelo)):.6f} s")
